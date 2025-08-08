@@ -1,6 +1,8 @@
 #  AI-Powered Workout Routine Builder
 
-An intelligent fitness app that creates personalized workout plans using AI and real exercise data.
+
+# Description:
+
 
 ## Features
 -  AI-powered plan generation
