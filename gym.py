@@ -18,58 +18,94 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for better styling
 st.markdown("""
 <style>
-    .main {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
+/* Define color variables for both modes */
+:root {
+    --primary-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --card-bg: #ffffff;
+    --card-text: #000000;
+    --accent-bg: linear-gradient(45deg, #667eea, #764ba2);
+    --accent-text: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-bg: linear-gradient(135deg, #2a2a72 0%, #009ffd 100%);
+        --secondary-bg: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+        --card-bg: #2c2c2c;
+        --card-text: #ffffff;
+        --accent-bg: linear-gradient(45deg, #4e54c8, #8f94fb);
+        --accent-text: #ffffff;
     }
-    .stApp {
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    }
-    .workout-card {
-        background: #cff00c;
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-        margin: 10px 0;
-        border-left: 5px solid #667eea;
-    }
-    .exercise-item {
-        background: linear-gradient(45deg, #667eea, #764ba2);
-        color: white;
-        padding: 15px;
-        border-radius: 10px;
-        margin: 5px 0;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-    .metric-card {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 20px;
-        border-radius: 15px;
-        text-align: center;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    }
-    .stButton > button {
-        background: linear-gradient(45deg, #667eea, #764ba2);
-        color: white;
-        border: none;
-        border-radius: 25px;
-        padding: 0.5rem 2rem;
-        font-weight: bold;
-        transition: all 0.3s ease;
-    }
-    .stButton > button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(102,126,234,0.3);
-    }
-    .sidebar .sidebar-content {
-        background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
-    }
+}
+
+/* Main content background */
+.main {
+    background: var(--primary-bg);
+    color: var(--card-text);
+}
+
+/* App background */
+.stApp {
+    background: var(--secondary-bg);
+}
+
+/* Workout card */
+.workout-card {
+    background: var(--card-bg);
+    color: var(--card-text);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    margin: 10px 0;
+    border-left: 5px solid #667eea;
+}
+
+/* Exercise item */
+.exercise-item {
+    background: var(--accent-bg);
+    color: var(--accent-text);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 5px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Metric card */
+.metric-card {
+    background: var(--accent-bg);
+    color: var(--accent-text);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+/* Buttons */
+.stButton > button {
+    background: var(--accent-bg);
+    color: var(--accent-text);
+    border: none;
+    border-radius: 25px;
+    padding: 0.5rem 2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102,126,234,0.3);
+}
+
+/* Sidebar background */
+.sidebar .sidebar-content {
+    background: var(--primary-bg);
+}
 </style>
 """, unsafe_allow_html=True)
+
 
 # Initialize session state
 def init_session_state():
