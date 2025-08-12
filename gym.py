@@ -18,74 +18,58 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# Custom CSS for better styling
 st.markdown("""
 <style>
-:root {
-    --primary-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --secondary-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    --accent-bg: linear-gradient(45deg, #667eea, #764ba2);
-}
-
-/* Light mode defaults */
-.block-container, .stApp {
-    background: var(--secondary-bg);
-}
-.block-container {
-    color: #000000;
-}
-.workout-card {
-    background: #ffffff;
-    color: #000000;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    margin: 10px 0;
-    border-left: 5px solid #667eea;
-}
-.exercise-item, .metric-card, .stButton > button {
-    background: var(--accent-bg);
-    color: #ffffff;
-    padding: 15px;
-    border-radius: 10px;
-    margin: 5px 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-/* Dark mode text/background adjustments */
-@media (prefers-color-scheme: dark) {
-    .block-container, .stApp {
-        background: var(--secondary-bg);
+    .main {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
     }
-    .block-container {
-        color: #ffffff;
+    .stApp {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     }
     .workout-card {
-        background: #2c2c2c;
-        color: #ffffff;
-        border-left: 5px solid #8f94fb;
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        margin: 10px 0;
+        border-left: 5px solid #667eea;
     }
-    .exercise-item, .metric-card, .stButton > button {
-        background: var(--accent-bg);
-        color: #ffffff;
+    .exercise-item {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin: 5px 0;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
-}
-
-/* Button hover effect */
-.stButton > button {
-    border: none;
-    border-radius: 25px;
-    padding: 0.5rem 2rem;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-.stButton > button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(102,126,234,0.3);
-}
+    .metric-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+    .stButton > button {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        border-radius: 25px;
+        padding: 0.5rem 2rem;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+    .stButton > button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102,126,234,0.3);
+    }
+    .sidebar .sidebar-content {
+        background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    }
 </style>
 """, unsafe_allow_html=True)
-
-
 
 # Initialize session state
 def init_session_state():
