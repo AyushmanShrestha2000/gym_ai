@@ -29,7 +29,7 @@ st.markdown("""
         background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     }
     .workout-card {
-        background: white;
+        background: #cff00c;
         padding: 20px;
         border-radius: 15px;
         box-shadow: 0 8px 32px rgba(0,0,0,0.1);
