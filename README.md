@@ -21,5 +21,5 @@ pip install streamlit requests google-generativeai
 streamlit run app.py
 
 # Live Demo
-[Try it here!] [https://gym-ams.streamlit.app/]
+[Try it here!] ([https://gym-ams.streamlit.app/])
 
