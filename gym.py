@@ -20,91 +20,71 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-/* Define color variables for both modes */
 :root {
     --primary-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --secondary-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    --card-bg: #ffffff;
-    --card-text: #000000;
     --accent-bg: linear-gradient(45deg, #667eea, #764ba2);
-    --accent-text: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --primary-bg: linear-gradient(135deg, #2a2a72 0%, #009ffd 100%);
-        --secondary-bg: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
-        --card-bg: #2c2c2c;
-        --card-text: #ffffff;
-        --accent-bg: linear-gradient(45deg, #4e54c8, #8f94fb);
-        --accent-text: #ffffff;
-    }
-}
-
-/* Main content background */
-.main {
-    background: var(--primary-bg);
-    color: var(--card-text);
-}
-
-/* App background */
-.stApp {
+/* Light mode defaults */
+.block-container, .stApp {
     background: var(--secondary-bg);
 }
-
-/* Workout card */
+.block-container {
+    color: #000000;
+}
 .workout-card {
-    background: var(--card-bg);
-    color: var(--card-text);
+    background: #ffffff;
+    color: #000000;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.1);
     margin: 10px 0;
     border-left: 5px solid #667eea;
 }
-
-/* Exercise item */
-.exercise-item {
+.exercise-item, .metric-card, .stButton > button {
     background: var(--accent-bg);
-    color: var(--accent-text);
+    color: #ffffff;
     padding: 15px;
     border-radius: 10px;
     margin: 5px 0;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-/* Metric card */
-.metric-card {
-    background: var(--accent-bg);
-    color: var(--accent-text);
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+/* Dark mode text/background adjustments */
+@media (prefers-color-scheme: dark) {
+    .block-container, .stApp {
+        background: var(--secondary-bg);
+    }
+    .block-container {
+        color: #ffffff;
+    }
+    .workout-card {
+        background: #2c2c2c;
+        color: #ffffff;
+        border-left: 5px solid #8f94fb;
+    }
+    .exercise-item, .metric-card, .stButton > button {
+        background: var(--accent-bg);
+        color: #ffffff;
+    }
 }
 
-/* Buttons */
+/* Button hover effect */
 .stButton > button {
-    background: var(--accent-bg);
-    color: var(--accent-text);
     border: none;
     border-radius: 25px;
     padding: 0.5rem 2rem;
     font-weight: bold;
     transition: all 0.3s ease;
 }
-
 .stButton > button:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(102,126,234,0.3);
 }
-
-/* Sidebar background */
-.sidebar .sidebar-content {
-    background: var(--primary-bg);
-}
 </style>
 """, unsafe_allow_html=True)
+
 
 
 # Initialize session state
